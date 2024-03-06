@@ -1,0 +1,12 @@
+n = 3
+result = []
+def generateParentheses(left, right, current):
+    if left == n and right == n:
+        result.append(current)
+        return
+    if left < n:
+        generateParentheses(left + 1, right, current + '(')
+    if right < left:
+        generateParentheses(left, right + 1, current + ')')
+generateParentheses(0, 0, '')
+print(result)
